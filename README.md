@@ -1,16 +1,81 @@
-# React + Vite
+Spell Magic is an interactive camera-based web experience that uses hand tracking and gesture recognition to let users cast magical spells with their hands.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## ✨ Features
 
-Currently, two official plugins are available:
+- 📷 Real-time webcam interaction
+- ✋ Hand tracking using MediaPipe
+- 🪄 Gesture-based spell casting
+- 🌸 Bloom spell
+- ⭐ Starfall spell
+- 💗 Heart spell
+- ⚡ Thunder spell
+- 🫥 Invisible spell
+- ✨ Animated magical effects
+- 🎨 Dark fantasy interface
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
 
-## React Compiler
+- React
+- Vite
+- JavaScript
+- CSS
+- MediaPipe Tasks Vision
+- HTML Canvas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎮 How It Works
 
-## Expanding the Oxlint configuration
+The webcam detects hand movements using MediaPipe. Your gestures are interpreted as commands to create different magical effects.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Camera  
+↓  
+MediaPipe Hand Tracking  
+↓  
+Gesture Detection  
+↓  
+Spell Selection  
+↓  
+Magic Effect ✨
+
+## 🚀 Run Locally
+
+### Clone the repository
+
+```bash
+git clone https://github.com/anjaliyadav40/spell-magic.git
+
+Go into the project
+cd spell-magic
+
+Install dependencies
+npm install
+
+Start the development server
+npm run dev
+
+Allow camera access when your browser asks for permission.
+🔮 Future Plans
+- 🎤 Voice-controlled spells
+- ✏️ Draw shapes in the air to cast spells
+- 🌌 Galaxy and portal effects
+- 🔥 Fire spell
+- 🌀 Portal spell
+- ♾️ Cosmic spell
+- ✋ Advanced two-hand interactions
+- 📖 Interactive spellbook
+- 🔓 Spell unlocking system
+- 🎮 Advanced magical HUD
+👩‍💻 Author
+Anjali Yadav
+GitHub: https://github.com/anjaliyadav40
+✨ Your hands are the wand.
+
+### Then save
+
+**Ctrl + S**
+
+Then in your terminal:
+
+```bash
+git add README.md
+git commit -m "Add README"
+git push
