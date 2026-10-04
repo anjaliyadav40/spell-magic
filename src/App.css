@@ -1,0 +1,1083 @@
+/* =========================================================
+   GLOBAL APP
+========================================================= */
+
+.app {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: #050308;
+}
+
+
+/* =========================================================
+   LANDING PAGE
+========================================================= */
+
+.landing-page {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at var(--mouse-x) var(--mouse-y),
+      rgba(155, 72, 190, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(91, 43, 125, 0.18),
+      transparent 45%
+    ),
+    #050308;
+
+  isolation: isolate;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   LANDING STARS
+========================================================= */
+
+.landing-stars {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.landing-stars span {
+  position: absolute;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 12px;
+
+  animation:
+    starFloat 4s ease-in-out infinite,
+    starTwinkle 2.5s ease-in-out infinite;
+}
+
+.landing-stars span:nth-child(1) {
+  top: 12%;
+  left: 12%;
+}
+
+.landing-stars span:nth-child(2) {
+  top: 23%;
+  left: 30%;
+
+  animation-delay: 0.8s;
+}
+
+.landing-stars span:nth-child(3) {
+  top: 15%;
+  right: 18%;
+
+  animation-delay: 1.3s;
+}
+
+.landing-stars span:nth-child(4) {
+  top: 42%;
+  right: 9%;
+
+  animation-delay: 0.4s;
+}
+
+.landing-stars span:nth-child(5) {
+  bottom: 18%;
+  left: 17%;
+
+  animation-delay: 1.8s;
+}
+
+.landing-stars span:nth-child(6) {
+  bottom: 28%;
+  right: 22%;
+
+  animation-delay: 0.6s;
+}
+
+.landing-stars span:nth-child(7) {
+  bottom: 12%;
+  left: 42%;
+
+  animation-delay: 1.1s;
+}
+
+.landing-stars span:nth-child(8) {
+  top: 32%;
+  left: 6%;
+
+  animation-delay: 1.6s;
+}
+
+.landing-stars span:nth-child(9) {
+  bottom: 40%;
+  right: 6%;
+
+  animation-delay: 0.9s;
+}
+
+.landing-stars span:nth-child(10) {
+  top: 8%;
+  left: 53%;
+
+  animation-delay: 1.4s;
+}
+
+
+/* =========================================================
+   NEBULA
+========================================================= */
+
+.landing-nebula {
+  position: absolute;
+
+  width: 55vw;
+  height: 55vw;
+
+  max-width: 800px;
+  max-height: 800px;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.nebula-one {
+  top: -25%;
+  left: -15%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(126, 48, 155, 0.25),
+      transparent 65%
+    );
+
+  animation: nebulaMove 12s ease-in-out infinite;
+}
+
+.nebula-two {
+  right: -20%;
+  bottom: -25%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56, 30, 120, 0.3),
+      transparent 65%
+    );
+
+  animation:
+    nebulaMove 15s ease-in-out infinite reverse;
+}
+
+
+/* =========================================================
+   MOUSE GLOW
+========================================================= */
+
+.landing-mouse-glow {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle 180px at var(--mouse-x) var(--mouse-y),
+      rgba(255, 110, 215, 0.1),
+      transparent 70%
+    );
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   LANDING CONTENT
+========================================================= */
+
+.landing-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(850px, 90vw);
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-symbol {
+  margin-bottom: 20px;
+
+  font-size: 34px;
+
+  color: #ff79dc;
+
+  text-shadow:
+    0 0 12px rgba(255, 100, 215, 0.8),
+    0 0 35px rgba(255, 100, 215, 0.35);
+
+  animation:
+    symbolPulse 3s ease-in-out infinite;
+}
+
+.landing-eyebrow {
+  margin: 0 0 18px;
+
+  font-size: 11px;
+
+  letter-spacing: 0.34em;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-weight: 600;
+}
+
+.landing-title {
+  margin: 0;
+
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(
+    62px,
+    10vw,
+    145px
+  );
+
+  line-height: 0.9;
+
+  letter-spacing: 0.03em;
+
+  font-weight: 500;
+
+  color: #f8f1ff;
+
+  text-shadow:
+    0 0 35px rgba(255, 255, 255, 0.08);
+}
+
+.landing-title span {
+  display: block;
+
+  color: transparent;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #ffb4ec 35%,
+      #bd70e9 70%,
+      #7653d8 100%
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  text-shadow:
+    0 0 40px rgba(206, 103, 229, 0.2);
+}
+
+.landing-description {
+  margin: 35px 0 35px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   START BUTTON
+========================================================= */
+
+.landing-start-button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+
+  min-width: 245px;
+
+  padding: 16px 24px;
+
+  border-radius: 999px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 92, 210, 0.9),
+      rgba(111, 65, 190, 0.95)
+    );
+
+  box-shadow:
+    0 0 25px rgba(227, 83, 210, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.landing-start-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 45px rgba(227, 83, 210, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.button-arrow {
+  font-size: 20px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.landing-start-button:hover
+.button-arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   LANDING HINT
+========================================================= */
+
+.landing-hint {
+  margin-top: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 10px;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   FLOATING LANDING SPELLS
+========================================================= */
+
+.landing-spell {
+  position: absolute;
+
+  z-index: 4;
+
+  font-size: clamp(
+    25px,
+    4vw,
+    55px
+  );
+
+  filter:
+    drop-shadow(
+      0 0 15px rgba(255, 120, 220, 0.35)
+    );
+
+  pointer-events: none;
+
+  animation:
+    spellFloat 5s ease-in-out infinite;
+}
+
+.spell-one {
+  top: 24%;
+  left: 15%;
+}
+
+.spell-two {
+  top: 18%;
+  right: 15%;
+
+  animation-delay: 1s;
+}
+
+.spell-three {
+  bottom: 20%;
+  left: 13%;
+
+  animation-delay: 2s;
+}
+
+.spell-four {
+  bottom: 24%;
+  right: 15%;
+
+  animation-delay: 1.5s;
+}
+
+.spell-five {
+  top: 50%;
+  right: 7%;
+
+  animation-delay: 2.5s;
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.landing-orbit {
+  position: absolute;
+
+  border: 1px solid rgba(
+    255,
+    125,
+    221,
+    0.1
+  );
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 65vw;
+  height: 65vw;
+
+  max-width: 900px;
+  max-height: 900px;
+
+  animation:
+    orbitRotate 35s linear infinite;
+}
+
+.orbit-two {
+  width: 80vw;
+  height: 35vw;
+
+  max-width: 1100px;
+
+  transform: rotate(-25deg);
+
+  animation:
+    orbitRotate 45s linear infinite reverse;
+}
+
+
+/* =========================================================
+   MAGIC CAMERA
+========================================================= */
+
+.magic-chamber {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: #000;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.magic-video {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scaleX(-1);
+
+  z-index: 0;
+
+  background: #000;
+}
+
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+.magic-canvas {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   VIGNETTE
+========================================================= */
+
+.magic-vignette {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 45%,
+      rgba(0, 0, 0, 0.15) 70%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+}
+
+
+/* =========================================================
+   CAMERA HEADER
+========================================================= */
+
+.magic-camera-header {
+  position: absolute;
+
+  top: 25px;
+  left: 28px;
+  right: 28px;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  pointer-events: none;
+}
+
+.magic-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 14px;
+
+  letter-spacing: 0.18em;
+
+  color: white;
+
+  text-shadow:
+    0 0 15px rgba(255, 120, 220, 0.4);
+}
+
+.magic-brand span {
+  color: #ff77d9;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   TRACKING STATUS
+========================================================= */
+
+.tracking-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  max-width: 430px;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  background: rgba(20, 14, 28, 0.7);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(14px);
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 12px;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background: #777;
+}
+
+.status-dot.active {
+  background: #ff6fd8;
+
+  box-shadow:
+    0 0 10px #ff6fd8;
+
+  animation:
+    statusPulse 1.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SPELL SELECTOR
+========================================================= */
+
+.floating-spell-selector {
+  position: absolute;
+
+  top: 75px;
+  left: 50%;
+
+  z-index: 20;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(30, 24, 40, 0.78);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+}
+
+.spell-button {
+  width: 52px;
+  height: 52px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  border: 1px solid
+    transparent;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.spell-button:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+.spell-button.selected {
+  transform: scale(1.06);
+
+  background:
+    rgba(255, 105, 215, 0.13);
+
+  border-color:
+    rgba(255, 105, 215, 0.65);
+
+  box-shadow:
+    0 0 20px
+      rgba(255, 105, 215, 0.22);
+}
+
+.spell-icon {
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   CAMERA MESSAGE
+========================================================= */
+
+.camera-message {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 15;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  background:
+    rgba(5, 3, 8, 0.45);
+
+  backdrop-filter: blur(4px);
+
+  color: white;
+
+  text-align: center;
+}
+
+.camera-message p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  font-size: 13px;
+
+  letter-spacing: 0.05em;
+}
+
+.camera-message.error {
+  color: #ff9adf;
+}
+
+.magic-loader {
+  font-size: 38px;
+
+  color: #ff75d9;
+
+  text-shadow:
+    0 0 20px #ff75d9;
+
+  animation:
+    loaderSpin 2s linear infinite;
+}
+
+
+/* =========================================================
+   HAND INSTRUCTION
+========================================================= */
+
+.hand-instruction {
+  position: absolute;
+
+  left: 50%;
+  bottom: 28px;
+
+  z-index: 12;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  max-width: min(
+    90vw,
+    650px
+  );
+
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(20, 14, 28, 0.78);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 15px 40px
+      rgba(0, 0, 0, 0.3);
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.78
+  );
+
+  font-size: 12px;
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.hand-instruction span {
+  font-size: 20px;
+}
+
+.hand-instruction p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes starFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes starTwinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes nebulaMove {
+  0%,
+  100% {
+    transform: translate3d(
+      0,
+      0,
+      0
+    ) scale(1);
+  }
+
+  50% {
+    transform: translate3d(
+      4%,
+      -3%,
+      0
+    ) scale(1.08);
+  }
+}
+
+@keyframes symbolPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes spellFloat {
+  0%,
+  100% {
+    transform: translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-18px)
+      rotate(5deg);
+  }
+}
+
+@keyframes orbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes loaderSpin {
+  from {
+    transform: rotate(0deg)
+      scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg)
+      scale(1.2);
+  }
+
+  to {
+    transform: rotate(360deg)
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .landing-title {
+    font-size: 58px;
+  }
+
+  .landing-description {
+    font-size: 13px;
+  }
+
+  .landing-eyebrow {
+    font-size: 8px;
+  }
+
+  .floating-spell-selector {
+    top: 70px;
+
+    gap: 3px;
+
+    padding: 5px;
+  }
+
+  .spell-button {
+    width: 43px;
+    height: 43px;
+  }
+
+  .spell-icon {
+    font-size: 21px;
+  }
+
+  .magic-camera-header {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .tracking-status {
+    max-width: 58vw;
+
+    font-size: 10px;
+
+    padding: 8px 11px;
+  }
+
+  .magic-brand {
+    font-size: 10px;
+  }
+
+  .hand-instruction {
+    bottom: 15px;
+
+    max-width: 92vw;
+
+    padding: 10px 15px;
+
+    font-size: 10px;
+  }
+
+  .landing-spell {
+    font-size: 28px;
+  }
+}
