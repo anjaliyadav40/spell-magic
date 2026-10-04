@@ -49,6 +49,9 @@ cd spell-magic
 Install dependencies
 npm install
 
+```bash
+npm install @mediapipe/tasks-vision
+
 Start the development server
 npm run dev
 
